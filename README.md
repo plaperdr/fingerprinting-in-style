@@ -9,7 +9,7 @@ The **extension** folder contains our defense prototype that protects users agai
 It redirects _getComputedStyle_ calls made on 222,642 specific elements into a special Shadow DOM copy that will return benign measurements. 
 
 ### Demo page
-Link
+[https://plaperdr.github.io/fingerprinting-in-style/demo/demo.html](https://plaperdr.github.io/fingerprinting-in-style/demo/demo.html)
 
 In order to demonstrate the effectiveness of our extension, we have a demo page that detects 11 browser extensions through the style they inject on any page.
 The 11 triggers we use were working as of January 4th 2021 but the targeted extensions may have been updated since then and so the detection may be altered. 
@@ -38,12 +38,13 @@ List of tested extensions (last tested versions in parentheses):
 * [Cently (Coupons at Checkout)](https://chrome.google.com/webstore/detail/cently-coupons-at-checkou/kegphgaihkjoophpabchkmpaknehfamb)
 (v.5.9.0)
 
-#### Instructions to test the extension
-1. Download the extension by pulling the repo or downloading the corresponding zip file [HERE]().
+### Instructions to test the extension
+1. Download the extension by pulling the repo or downloading the corresponding zip file [HERE](https://github.com/plaperdr/fingerprinting-in-style/releases/download/1.0/fingerprinting-in-style-extension.zip).
 2. On a Chromium-based browser like Chrome, visit the address "chrome://extensions/".
 3. Activate "Developer mode" on the right and click on "Load unpacked extension".
 ![Extension page on Chrome](images/extension-ui.png)
-4. Select the folder which contains the extension (the one from the repo or the unzipped file).
+4. Select the folder which contains the extension (the one from the repo or the unzipped file). 
+You should see the "Protecting in style" extension enabled in your browser (see below).
 ![Extension enabled on Chrome](images/extension-activated.png)
-5. Visit the [demo page]() and all fingerprinted extensions should be marked as "non" detected when the defense is active. 
-Links to install fingerprinted extensions can be found on the demo page.
+5. Visit the [demo page](https://plaperdr.github.io/fingerprinting-in-style/demo/demo.html) and all fingerprinted extensions should be marked as "non" detected when the defense is active. 
+Links to install the fingerprinted extensions can be found on the demo page.
