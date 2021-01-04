@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 10%;
+}
+.link {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+</style>
+  
+  
+</head>
+<body>
+<center>
+<h2>Demo page for USENIX Security'21 paper
+  <br>"Fingerprinting in Style: Detecting Browser Extensions via Injected Style Sheets"</h2>
+  <p style="font-size:20px"><a href="">Code repository</a></p>
+  <p style="font-size:20px" id="detected_stats"></p>
+</center>
+  
+<table id="myTable">
+  <tr class="header">
+    <th style="width:40%;">Extension Name</th>
+    <th style="width:20%;">Extension ID</th>
+    <th style="width:10%;">Link</th>
+    <th style="width:10%;">Active Users (January 2021)</th>
+    <th style="width:10%;">Detected</th>
+  </tr>
+
+  <tr>
+    <td>Data Scraper - Easy Web Scraping</td>
+    <td>nndknepjnldbdbepjfgmncbggmopgden</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/data-scraper-easy-web-scr/nndknepjnldbdbepjfgmncbggmopgden">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>100,000+</td>
+    <td id=nndknepjnldbdbepjfgmncbggmopgden></td>
+  </tr>
+  <tr>
+    <td>TTSReaderX In-Page Text to Speech</td>
+    <td>pakknklefcjdhejnffafpeelofiekebg</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/ttsreaderx-in-page-text-t/pakknklefcjdhejnffafpeelofiekebg">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>50,000+</td>
+    <td id=pakknklefcjdhejnffafpeelofiekebg></td>
+  </tr>
+  <tr>
+    <td>Touch VPN</td>
+    <td>bihmplhobchoageeokmgbdihknkjbknd</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/touch-vpn-secure-and-unli/bihmplhobchoageeokmgbdihknkjbknd">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>4,000,000+</td>
+    <td id=bihmplhobchoageeokmgbdihknkjbknd></td>
+  </tr>
+  <tr>
+    <td>AdBlocker by Trustnav</td>
+    <td>dgbldpiollgaehnlegmfhioconikkjjh</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/adblocker-by-trustnav/dgbldpiollgaehnlegmfhioconikkjjh">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>600,000+</td>
+    <td id=dgbldpiollgaehnlegmfhioconikkjjh></td>
+  </tr>
+  <tr>
+    <td>MozBar</td>
+    <td>eakacpaijcpapndcfffdgphdiccmpknp</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/mozbar/eakacpaijcpapndcfffdgphdiccmpknp">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>700,000+</td>
+    <td id=eakacpaijcpapndcfffdgphdiccmpknp></td>
+  </tr>
+  <tr>
+    <td>Disconnect</td>
+    <td>jeoacafpbcihiomhlakheieifhpjdfeo</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>600,000+</td>
+    <td id=jeoacafpbcihiomhlakheieifhpjdfeo></td>
+  </tr>
+  <tr>
+    <td>TripAdvisor Browser Button</td>
+    <td>oiekdmlabennjdpgimlcpmphdjphlcha</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/tripadvisor-browser-butto/oiekdmlabennjdpgimlcpmphdjphlcha">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>80,000+</td>
+    <td id=oiekdmlabennjdpgimlcpmphdjphlcha></td>
+  </tr>
+  <tr>
+    <td>Awesome Screenshot: Screen Video Recorder</td>
+    <td>nlipoenfbbikpbjkfpfillcgkoblgpmj</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/awesome-screenshot-screen/nlipoenfbbikpbjkfpfillcgkoblgpmj">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>1,000,000+</td>
+    <td id=nlipoenfbbikpbjkfpfillcgkoblgpmj></td>
+  </tr>
+  <tr>
+    <td>Hunter: Find email addresses in seconds</td>
+    <td>hgmhmanijnjhaffoampdlllchpolkdnj</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/hunter-find-email-address/hgmhmanijnjhaffoampdlllchpolkdnj">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>400,000+</td>
+    <td id=hgmhmanijnjhaffoampdlllchpolkdnj></td>
+  </tr>
+  <tr>
+    <td>Screenshot reader</td>
+    <td>enfolipbjmnmleonhhebhalojdpcpdoo</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/screenshot-reader/enfolipbjmnmleonhhebhalojdpcpdoo">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>1,000,000+ </td>
+    <td id=enfolipbjmnmleonhhebhalojdpcpdoo></td>
+  </tr>
+  <tr>
+    <td>Cently (Coupons at Checkout)</td>
+    <td>kegphgaihkjoophpabchkmpaknehfamb</td>
+    <td>
+      <a href="https://chrome.google.com/webstore/detail/cently-coupons-at-checkou/kegphgaihkjoophpabchkmpaknehfamb">
+        <img class="link" src="external-link.svg">
+      </a>
+    </td>
+    <td>200,000+</td>
+    <td id=kegphgaihkjoophpabchkmpaknehfamb></td>
+  </tr>
+
+</table>
+
+<div class='trigger' id='32776'><div trigger='no' orig_class='dm-container'></div>
+<div trigger='yes' class='dm-container'></div></div>
+
+<div class='trigger' id='53137'><div trigger='no' orig_id='ttsreaderx-content'></div>
+<div trigger='yes' id='ttsreaderx-content'></div></div>
+
+<div class='trigger' id='47628'><div trigger='no' orig_id='_af_content_wall_logo'></div>
+<div trigger='yes' id='_af_content_wall_logo'></div></div>
+
+<div class='trigger' id='53114'><div trigger='no' orig_id='trustnav_pb_iframe'></div>
+<div trigger='yes' id='trustnav_pb_iframe'></div></div>
+
+<div class='trigger' id='39056'><div trigger='no' orig_class='mozbar-serp-item-wGA7MhRhQ3WS'></div>
+<div trigger='yes' class='mozbar-serp-item-wGA7MhRhQ3WS'></div></div>
+
+<div class='trigger' id='32701'><div trigger='no' orig_class='disconnect-collapsed'></div>
+<div trigger='yes' class='disconnect-collapsed'></div></div>
+
+<div class='trigger' id='39884'><div trigger='no' orig_class='ollie_owl'></div>
+<div trigger='yes' class='ollie_owl'></div></div>
+
+<div class='trigger' id='47943'><div trigger='no' orig_id='as-notifyClose'></div>
+<div trigger='yes' id='as-notifyClose'></div></div>
+
+<div class='trigger' id='36260'><div trigger='no' orig_class='hunter-email'></div>
+<div trigger='yes' class='hunter-email'></div></div>
+
+<div class='trigger' id='52859'><div trigger='no' orig_id='texthelp_ocr_actions'></div>
+<div trigger='yes' id='texthelp_ocr_actions'></div></div>
+
+<div class='trigger' id='30869'><div trigger='no' orig_class='centlyButtonContainer'></div>
+<div trigger='yes' class='centlyButtonContainer'></div></div>
+
+
+<script type=text/javascript>
+
+String.prototype.hashCode = function(){
+    var hash = 0;
+    if (this.length == 0) return hash;
+    for (i = 0; i < this.length; i++) {
+        char = this.charCodeAt(i);
+        hash = ((hash<<5)-hash)+char;
+        // Convert to 32bit integer
+        hash = hash & hash;
+    }
+    return hash;
+}
+
+function detectedGCS(t, b) {
+  return window.getComputedStyle(t).cssText != window.getComputedStyle(b).cssText;
+}
+
+function detectedDim(t, b) {
+    // Only a dimension test for now
+    tr = t.getBoundingClientRect();
+    br = b.getBoundingClientRect();
+
+    w1 = tr["right"] - tr["left"];
+    h1 = tr["bottom"] - tr["top"];
+    w2 = br["right"] - br["left"];
+    h2 = br["bottom"] - br["top"];
+
+    if (w1 != w2) {
+        return true;
+    }
+
+    if (h1 != h2) {
+        return true;
+    }
+
+    return false;
+}
+
+function getCssResults() {
+    var triggers = document.getElementsByClassName('trigger');
+    
+    var detected = [];
+    
+    for (var i = 0; i < triggers.length; ++i) {
+        try {
+            var id = triggers[i].getAttribute("id");
+            // Selecting elements to compare
+            var trigger = triggers[i].querySelector("[trigger='yes']");
+            var baseline = triggers[i].querySelector("[trigger='no']");
+
+            var diff_gcs = false;
+            diff_gcs = detectedGCS(trigger, baseline);
+
+            var diff_dim = false;
+            if (!diff_gcs) diff_dim = detectedDim(trigger, baseline);
+
+            if (diff_gcs || diff_dim) {
+                detected.push(id)
+            }
+        }
+        catch(err) {
+            // May happen...
+        }
+    }
+    
+    return detected;
+}
+
+</script>
+
+<script type=text/javascript>
+
+var ext_trigger_id_mappings = {"nndknepjnldbdbepjfgmncbggmopgden": ["32776"], "pakknklefcjdhejnffafpeelofiekebg": ["53137"], "bihmplhobchoageeokmgbdihknkjbknd": ["47628"], "dgbldpiollgaehnlegmfhioconikkjjh": ["53114"], "eakacpaijcpapndcfffdgphdiccmpknp": ["39056"], "jeoacafpbcihiomhlakheieifhpjdfeo": ["32701"], "oiekdmlabennjdpgimlcpmphdjphlcha": ["39884"], "nlipoenfbbikpbjkfpfillcgkoblgpmj": ["47943"], "hgmhmanijnjhaffoampdlllchpolkdnj": ["36260"], "enfolipbjmnmleonhhebhalojdpcpdoo": ["52859"], "kegphgaihkjoophpabchkmpaknehfamb": ["30869"]};
+
+</script>
+
+<script type="text/javascript">
+
+window.onload = function() {
+	var start_ts = performance.now();
+
+	var detected_triggers = getCssResults();
+
+	var ts_1 = performance.now();
+
+	var n_detected = 0;
+	var n_total = 0;
+
+	var ts_2 = performance.now();
+
+	for (let k in ext_trigger_id_mappings) {
+		if (!ext_trigger_id_mappings.hasOwnProperty(k))
+			continue;
+
+		var hid = k;
+		var ext_triggers = ext_trigger_id_mappings[hid];
+		var ext_detected = true;
+
+		n_total += 1;
+
+		for (var i = 0; i < ext_triggers.length; i++) {
+			if (!detected_triggers.includes(ext_triggers[i])) {
+				ext_detected = false;
+				console.log("Not detected:", hid, ext_triggers[i]);
+			}
+		}
+
+		var table_elem = document.getElementById(hid);
+		if (ext_detected) {
+			table_elem.textContent = "YES";
+			n_detected += 1;
+		} else
+			table_elem.textContent = "NO";
+	}
+
+	var end_ts = performance.now();
+
+	var detection_time_ms = (end_ts - start_ts).toFixed(3);
+	console.log("Detection took " + detection_time_ms + "ms, " +
+			(end_ts - ts_2).toFixed(3) + "ms, " +
+			(ts_2 - ts_1).toFixed(3) + "ms, " +
+			(ts_1 - start_ts).toFixed(3) + "ms");
+
+	document.getElementById("detected_stats").textContent =
+			"Detected: " + n_detected + " / " + n_total;
+}
+
+</script>
+
+</body>
+</html>

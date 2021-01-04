@@ -1,0 +1,14 @@
+{
+  "name": "Protecting in style",
+  "version" : "1.0.0",
+  "description": "Prevents detection of extensions through getComputedStyle leakage",
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["*://*/*"],
+      "js": ["contentFull.js"],
+      "all_frames": true
+    }
+  ],
+  "manifest_version": 2
+}
