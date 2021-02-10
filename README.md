@@ -48,3 +48,14 @@ You should see the "Protecting in style" extension enabled in your browser (see 
 ![Extension enabled on Chrome](images/extension-activated.png)
 5. Visit the [demo page](https://plaperdr.github.io/fingerprinting-in-style/demo/demo.html) and all fingerprinted extensions should be marked as "non" detected when the defense is active. 
 Links to install the fingerprinted extensions can be found on the demo page.
+
+### Dataset
+To encourage further research on style fingerprinting, we make our dataset available so that future researchers can compare with our findings.
+It contains the following two entities:
+* The **trigger_pages** folder has the raw trigger pages that we used to check if an extension is detectable or not. 
+Each HTML file contains thousands of very specific HTML structures with both a baseline version and a trigger one. 
+When a detectable extension is present, it will manifest its presence by modifying the style of its corresponding "trigger" version. 
+When compared with the style of the "baseline" one, we can compute the style fingerprint of the extension used for detection.
+It should be noted that each HTML page outputs in the console the different style fingerprints it detects during its run.
+* The **4446_fingerprintable_extensions.zip** (link to be communicated soon) file is the full dataset of the 4,446 extensions that we found to be detectable through style fingerprinting. 
+Each file in the zip follows the naming convention _"\<Extension ID\>\_\<version\>.zip"_. It is available outside of GitHub as its size is about 3.7GB. 

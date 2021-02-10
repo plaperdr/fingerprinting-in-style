@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+String.prototype.hashCode = function(){
+    var hash = 0;
+    if (this.length == 0) return hash;
+    for (i = 0; i < this.length; i++) {
+        char = this.charCodeAt(i);
+        hash = ((hash<<5)-hash)+char;
+        // Convert to 32bit integer
+        hash = hash & hash; 
+    }
+    return hash;
+}
+</script>
+</head>
+<body>
+
+
+<div class='trigger' id='54780'><x-vf-button-wrap><div trigger='no' orig_class='vf-dropbtn-link-item vf-dropbtn-menu-item'></div></x-vf-button-wrap>
+<x-vf-button-wrap><div trigger='yes' class='vf-dropbtn-link-item vf-dropbtn-menu-item'></div></x-vf-button-wrap></div>
+
+<div class='trigger' id='54781'><x-vf-button-wrap><div trigger='no' orig_class='vf-dropbtn-menu-item'></div></x-vf-button-wrap>
+<x-vf-button-wrap><div trigger='yes' class='vf-dropbtn-menu-item'></div></x-vf-button-wrap></div>
+
+<div class='trigger' id='54782'><x-vf-button-wrap><x-vf-button trigger='no' orig_class='single'></x-vf-button></x-vf-button-wrap>
+<x-vf-button-wrap><x-vf-button trigger='yes' class='single'></x-vf-button></x-vf-button-wrap></div>
+
+<div class='trigger' id='54783'><x-vf-button-wrap><x-vf-button trigger='no' orig_class='vf-dropdown'></x-vf-button></x-vf-button-wrap>
+<x-vf-button-wrap><x-vf-button trigger='yes' class='vf-dropdown'></x-vf-button></x-vf-button-wrap></div>
+
+<div class='trigger' id='54784'><x-vf-button-wrap><x-vf-button><div trigger='no' orig_class='vf-inline-image'></div></x-vf-button></x-vf-button-wrap>
+<x-vf-button-wrap><x-vf-button><div trigger='yes' class='vf-inline-image'></div></x-vf-button></x-vf-button-wrap></div>
+
+<div class='trigger' id='54785'><x-vf-button-wrap><x-vf-button><div trigger='no' orig_class='vf-logo-sub'></div></x-vf-button></x-vf-button-wrap>
+<x-vf-button-wrap><x-vf-button><div trigger='yes' class='vf-logo-sub'></div></x-vf-button></x-vf-button-wrap></div>
+
+<div class='trigger' id='54786'><x-vf-button-wrap><x-vf-button><div trigger='no' orig_class='vf-logo-whole'></div></x-vf-button></x-vf-button-wrap>
+<x-vf-button-wrap><x-vf-button><div trigger='yes' class='vf-logo-whole'></div></x-vf-button></x-vf-button-wrap></div>
+
+<div class='trigger' id='54787'><yuno-p><input trigger='no'></input></yuno-p>
+<yuno-p><input trigger='yes'></input></yuno-p></div>
+
+
+
+
+<script>
+
+function detectedGCS(t, b) {
+    if  (JSON.stringify(window.getComputedStyle(t)).hashCode() == 
+        JSON.stringify(window.getComputedStyle(b)).hashCode()) {
+            return []
+    }
+
+    var changed = [];
+    x = window.getComputedStyle(t);
+    y = window.getComputedStyle(b)
+    for(var k in x) {
+        if (x[k] != y[k]) {
+            changed.push(k);
+        }
+    }
+
+    return changed;
+}
+
+function detectedDim(t, b) {
+    var changed = [];
+
+    // Only a dimension test for now
+    tr = t.getBoundingClientRect();
+    br = b.getBoundingClientRect();
+
+    w1 = tr["right"] - tr["left"]
+    h1 = tr["bottom"] - tr["top"]
+    w2 = br["right"] - br["left"]
+    h2 = br["bottom"] - br["top"] 
+
+    if (w1 != w2) {
+        changed.push("w_" + w1 + "_" + w2);
+    }
+
+    if (h1 != h2) {
+        changed.push("h_" + h1 + "_" + h2);
+    }
+
+    return changed;
+}
+
+function getCssResults() {
+    var triggers = document.getElementsByClassName('trigger');
+    var detected = {}
+
+    for (var i = 0; i < triggers.length; ++i) {
+        try {
+            var id = triggers[i].getAttribute("id");
+            // Selecting elements to compare
+            var trigger = triggers[i].querySelector("[trigger='yes']");
+            var baseline = triggers[i].querySelector("[trigger='no']");
+            
+            var diff_gcs = detectedGCS(trigger, baseline);
+            var diff_dim = detectedDim(trigger, baseline);
+
+            if (diff_gcs.length > 0 || diff_dim.length > 0) {
+                detected[id] = {
+                    "gcs": diff_gcs,
+                    "dim": diff_dim
+                }
+            }
+        }
+        catch(err) {
+            // May happen...
+        }
+    }
+    return JSON.stringify(detected);
+}
+
+</script>
+</body>
+</html>
