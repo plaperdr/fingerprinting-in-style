@@ -57,5 +57,5 @@ Each HTML file contains thousands of very specific HTML structures with both a b
 When a detectable extension is present, it will manifest its presence by modifying the style of its corresponding "trigger" version. 
 When compared with the style of the "baseline" one, we can compute the style fingerprint of the extension used for detection.
 It should be noted that each HTML page outputs in the console the different style fingerprints it detects during its run.
-* The **4446_fingerprintable_extensions.zip** (link to be communicated soon) file is the full dataset of the 4,446 extensions that we found to be detectable through style fingerprinting. 
+* The **4446_fingerprintable_extensions.zip** file is the full dataset of the 4,446 extensions that we found to be detectable through style fingerprinting and can be downloaded [HERE](https://kapravelos.com/datasets/fingerprintable_extensions/).
 Each file in the zip follows the naming convention _"\<Extension ID\>\_\<version\>.zip"_. It is available outside of GitHub as its size is about 3.7GB. 
