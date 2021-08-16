@@ -2,7 +2,7 @@
 # Artifact for "Fingerprinting in Style: Detecting Browser Extensions via Injected Style Sheets"
 Paper by Pierre Laperdrix, Oleksii Starov, Quan Chen, Alexandros Kapravelos and Nick Nikiforakis to appear at USENIX Security '21
 
-Link to the paper will be added soon
+Paper: [https://www.usenix.org/system/files/sec21-laperdrix.pdf](https://www.usenix.org/system/files/sec21-laperdrix.pdf)
 
 ### Extension
 The **extension** folder contains our defense prototype that protects users against CSS-based extension fingerprinting.
