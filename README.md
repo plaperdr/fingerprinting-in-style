@@ -60,3 +60,6 @@ It should be noted that each HTML page outputs in the console the different styl
 The **trigger_map.txt** file contains the mapping between extension IDs and trigger number.
 * The **4446_fingerprintable_extensions.zip** file is the full dataset of the 4,446 extensions that we found to be detectable through style fingerprinting and can be downloaded [HERE](https://kapravelos.com/datasets/fingerprintable_extensions/).
 Each file in the zip follows the naming convention _"\<Extension ID\>\_\<version\>.zip"_. It is available outside of GitHub as its size is about 3.7GB. 
+
+### Acknowledgements
+Thanks to [Soroush Karami](https://github.com/skarami) for informing us about a possible iframe bypass in the defense prototype and providing a quick fix!
